@@ -1,9 +1,6 @@
 ## MatrixFact
+Na pasta matrix_fact tem o testes-tertius.py onde está o código dos testes que realizei. 
 
-### Install
-```
-pip install matrix-fact
-```
 
 ### What is matrix-fact?
 matrix-fact contains modules for constrained/unconstrained matrix factorization (and related) methods for both sparse and dense matrices. The repository can be found at https://github.com/gentaiscool/matrix_fact. The code is based on https://github.com/ChrisSchinnerl/pymf3 and https://github.com/rikkhill/pymf. We updated the code to support the latest library. It requires cvxopt, numpy, scipy and torch. We just added the support for PyTorch-based SNMF.
@@ -34,7 +31,6 @@ Given a dataset, most factorization methods try to minimize the Frobenius norm <
 >>> import numpy as np
 >>> data = np.array([[1.0, 0.0, 2.0], [0.0, 1.0, 1.0]])
 >>> nmf_mdl = matrix_fact.NMF(data, num_bases=2, niter=10)
->>> nmf_mdl.initialization()
 >>> nmf_mdl.factorize()
 ```
 
@@ -44,7 +40,6 @@ The basis vectors are now stored in <code>nmf_mdl.W</code>, the coefficients in 
 >>> data = np.array([[1.5], [1.2]])
 >>> W = np.array([[1.0, 0.0], [0.0, 1.0]])
 >>> nmf_mdl = matrix_fact.NMF(data, num_bases=2, niter=1, compW=False)
->>> nmf_mdl.initialization()
 >>> nmf_mdl.W = W
 >>> nmf_mdl.factorize()
 ```
